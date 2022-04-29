@@ -39,6 +39,7 @@ div.mainBody {
     box-shadow: 0 1px 5px 0 rgba(0,0,0,0.1); 
     padding: 15px;
     background-color: white; 
+    height: 97%;
 }
 
 </style>

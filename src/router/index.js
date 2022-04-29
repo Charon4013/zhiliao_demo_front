@@ -4,7 +4,7 @@ import UserLogin from '../components/UserLogin.vue'
 import Explore from '../components/Explore.vue'
 import UserInfo from '../components/UserInfo.vue'
 import NewQuestion from '../components/NewQuestion.vue'
-import Home from '../components/Home.vue'
+import Api from '../components/Api.vue'
 import QuestionWaiting from '../components/QuestionWaiting.vue'
 import UserCreator from '../components/UserCreator.vue'
 import NewAnswer from '../components/NewAnswer.vue'
@@ -19,6 +19,7 @@ import Editor from '../components/item/TextEditor.vue'
 import ImgUploadSupport from '../components/ImgUploadSupport.vue'
 import ModifyAnswer from '../components/ModifyAnswer.vue'
 import ModifyQuestion from '../components/ModifyQuestion.vue'
+import Home from '../components/Home.vue'
 
 const routes = [
     {
@@ -104,6 +105,10 @@ const routes = [
     {
         path: '/support/imgupload',
         component: ImgUploadSupport
+    },
+    {
+        path: '/api',
+        component: Api
     }
 ]
 

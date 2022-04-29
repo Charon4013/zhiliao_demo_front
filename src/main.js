@@ -2,7 +2,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import axios from 'axios'
 import router from '../src/router/index.js'
-import { CaretTop, ChatSquare, Edit } from '@element-plus/icons-vue'
+import { CaretTop, ChatSquare, Edit, Search, DocumentChecked, User, UserFilled } from '@element-plus/icons-vue'
 
 
 const app = createApp(App)
@@ -21,5 +21,9 @@ axios.defaults.headers.common['Token'] = localStorage.getItem('token')
 app.component("caretTop", CaretTop)
     .component("chatSquare", ChatSquare)
     .component("edit", Edit)
+    .component("search", Search)
+    .component("documentChecked", DocumentChecked)
+    .component("user", User)
+    .component("userFilled", UserFilled)
 app.use(router)
 app.mount('#app')

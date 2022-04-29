@@ -4,16 +4,17 @@
             <el-input v-model="userForm.username" type="text" required />
         </el-form-item>
         <el-form-item label="Email">
-            <el-input v-model="userForm.email" type="email" />
+            <el-input v-model="userForm.email" type="email" placeholder="登录不需要输入邮箱哦"/>
         </el-form-item>
         <el-form-item label="Password" prop="email">
             <el-input v-model="userForm.password" type="password" show-password required></el-input>
         </el-form-item>
-        <el-form-item>
+        <!-- 这一块咕了 -->
+        <!-- <el-form-item>
             <el-button type="primary" @click="btnLogin">Login</el-button>
             <el-button type="primary" @click="btnRegister" plain>Register</el-button>
             <el-button type @click="btnForgetPassword" plain>Forget?</el-button>
-        </el-form-item>
+        </el-form-item> -->
         <el-link type="info" href="https://github.com/shatyuka/Zhiliao">致敬Xposed插件 知了</el-link>
 
     </el-form>

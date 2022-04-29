@@ -1,17 +1,16 @@
 <template>
-    <el-scrollbar>
+
         <p v-for="(qaItem, index) in data" :key="index">
-            <div @click="divToQuestionDetail(qaItem.question.Id)">
-                <!-- <QuestionDetailItem :questiondata="qaItem.question"></QuestionDetailItem> -->
-                <strong style="font-size: larger;">{{qaItem.question.title}}</strong>
-                <AnswerDetailItem :answerdata="qaItem.answer"></AnswerDetailItem>
-                <el-button type="primary" disabled><el-icon><caret-top /></el-icon>&nbsp;{{qaItem.support_count}}</el-button>
-                <el-button type="primary" disabled><el-icon><chat-square /></el-icon>&nbsp;{{qaItem.comment_count}}</el-button>
+            <div>
+                <el-link :underline="false" @click="divToQuestionDetail(qaItem.question.Id)"><strong style="font-size: larger;">{{qaItem.question.title}}</strong></el-link>
                 
-            </div>    
+                <AnswerDetailItem :answerdata="qaItem.answer"></AnswerDetailItem>
+                <br>
+                <el-button type="text" disabled><el-icon><caret-top /></el-icon>&nbsp;{{qaItem.support_count}}</el-button>
+                <el-button type="text" disabled><el-icon><chat-square /></el-icon>&nbsp;{{qaItem.comment_count}}</el-button>          
+            </div>   
+            <br> 
         </p>
-    </el-scrollbar>
-    
 
 </template>
 
@@ -49,6 +48,10 @@ import SupportAndCommentDetail from "./SupportAndCommentDetail.vue"
 div {
     border-bottom:1px solid; 
     border-color: #E4E7ED; 
+}
+
+.el-link {
+    font-size: large;
 }
 
 </style>

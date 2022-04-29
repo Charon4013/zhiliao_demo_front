@@ -8,8 +8,9 @@
             <el-input v-model="question.description" type="textarea" :autosize="{minRows: 5}"></el-input>
         </el-form-item> -->
     <TextEditor ref="description"></TextEditor>
-    <el-button type="primary" @click="btnCreateQuestion">Create</el-button>
-
+    <br>
+    <el-button type="primary" @click="btnCreateQuestion"><el-icon><document-checked /></el-icon></el-button>
+    
     
 </template>
 

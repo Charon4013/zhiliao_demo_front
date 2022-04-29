@@ -15,9 +15,7 @@
                 <template v-slot="scope">       
                     <el-button type="danger" @click="btnToDeleteSomeone('user', scope.row.Id)">Delete</el-button>
                 </template>
-            </el-table-column>
-            
-            <!-- <el-table-column label="Operation"><el-button type="danger" @click="btnToDeleteSomeone">Delete</el-button></el-table-column>       -->
+            </el-table-column>           
         </el-table>
         <el-divider v-if="!userShow"></el-divider>
 
