@@ -1,5 +1,5 @@
 <template>
-    <h2>Question Detail One</h2>
+    <!-- <h2>Question Detail One</h2> -->
     <QuestionDetailItem :questiondata="qaData.question"></QuestionDetailItem>
     
     <el-divider></el-divider>
@@ -14,11 +14,12 @@
 
     <el-divider></el-divider>
     <h2>Comment List</h2>
-    <p v-for="(commentitemdata, index) in commentList" :key="index" class="scrollbar-demo-item">
+    <p v-if="this.commentList.length != 0" v-for="(commentitemdata, index) in commentList" :key="index" class="scrollbar-demo-item">
         <div>#{{ index+1 }}:</div>
         <CommentDetailItem :commentitem="commentitemdata"></CommentDetailItem>
         <CommentSupportDetailItem :commentid="commentitemdata.Id"></CommentSupportDetailItem>
     </p>
+    <p v-else>No comment yet</p>
 
 </template>
 

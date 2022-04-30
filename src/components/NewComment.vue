@@ -5,7 +5,7 @@
             <el-input v-model="content" type="textarea" :autosize="{minRows: 5}"></el-input>
         </el-form-item>
         <el-form-item>
-            <el-button type="primary" @click="btnCommentSubmit">Submit</el-button>
+            <el-button type="primary" @click="btnCommentSubmit"><el-icon><document-checked></document-checked></el-icon></el-button>
         </el-form-item>
     </el-form>
 </template>

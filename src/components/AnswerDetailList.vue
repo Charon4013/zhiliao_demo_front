@@ -1,6 +1,6 @@
 <template>
     <QuestionDetailItem :questiondata="qaData.question"></QuestionDetailItem>
-    
+    <br>
     <el-button type="primary" @click="btnAnswer"><el-icon><edit /></el-icon></el-button>
 
     <el-divider></el-divider>
@@ -9,7 +9,11 @@
 
     <p v-for="(answer, index) in qaData.answer" class="scrollbar-demo-item">
         <AnswerDetailItem :answerdata="answer"></AnswerDetailItem>
+        <br>
         <SupportAndCommentDetail :answerid="answer.Id"></SupportAndCommentDetail>
+        
+        <span style="float: right;"><el-icon><clock /></el-icon>&nbsp;{{answer.Created}}</span>
+        <el-divider />
     </p>
     
 </template>

@@ -1,5 +1,6 @@
 <template>
     <strong style="font-size: larger;">{{questiondata.title}}</strong>
+    <br><br>
     <TextView :content="questiondata.description"></TextView>
 </template>
 

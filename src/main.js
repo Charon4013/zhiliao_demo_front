@@ -2,7 +2,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import axios from 'axios'
 import router from '../src/router/index.js'
-import { CaretTop, ChatSquare, Edit, Search, DocumentChecked, User, UserFilled } from '@element-plus/icons-vue'
+import { CaretTop, ChatSquare, Edit, Search, DocumentChecked, User, UserFilled, Clock } from '@element-plus/icons-vue'
 
 
 const app = createApp(App)
@@ -25,5 +25,6 @@ app.component("caretTop", CaretTop)
     .component("documentChecked", DocumentChecked)
     .component("user", User)
     .component("userFilled", UserFilled)
+    .component("clock", Clock)
 app.use(router)
 app.mount('#app')

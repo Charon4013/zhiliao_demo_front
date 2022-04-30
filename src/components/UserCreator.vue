@@ -5,12 +5,13 @@
 
     <el-scrollbar v-if="!questionShow">
         <label>Your question:</label>
-        <p v-for="(question, index) in questionList" :key="index" class="scrollbar-demo-item">
+        <p v-if="this.questionList.length != 0" v-for="(question, index) in questionList" :key="index" class="scrollbar-demo-item">
             <QuestionDetailItem :questiondata="question"></QuestionDetailItem>
             <el-button type="primary" v-if="isUserOwn" @click="btnToModifyQuestion(question.Id)">修改问题</el-button>
             <el-button type="primary" v-if="isUserOwn" @click="btnToDeleteQuestion(question.Id)">删除问题</el-button>
             <el-divider />
         </p>
+        <p v-else>You have not question yet</p>
     </el-scrollbar>
 
 
@@ -24,6 +25,16 @@
             <el-divider />
         </p>
     </el-scrollbar>
+
+    <!-- 尝试改用Tabs标签页 -->
+    <!-- <el-tabs v-model="activeName" @tab-click="handleClick">
+        <el-tab-pane label="Question" @click="btnToQuestion">
+            <div>{{questionList}}</div>
+        </el-tab-pane>
+        <el-tab-pane label="Answer" @click="btnToAnswer">
+            <div>{{answerList}}</div>
+        </el-tab-pane>
+    </el-tabs> -->
 
 </template>
 
@@ -66,7 +77,8 @@ export default {
                             console.log("UserQuestionData: ", res.data.data)
                             this.questionList = res.data.data
                         } else {
-                            this.$router.push('/404')
+                            // this.$router.push('/404')
+                            console.log(this.questionList.length)
                         } 
                 })
             }
@@ -141,7 +153,7 @@ export default {
                         this.$router.go(0)
                     }
                 })
-        }
+        },
     },
 
     components: { QuestionDetailItem, AnswerDetailItem }

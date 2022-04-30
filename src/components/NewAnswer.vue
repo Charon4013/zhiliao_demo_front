@@ -1,10 +1,13 @@
 <template>
     <QuestionDetailItem :questiondata="question"></QuestionDetailItem>
-   
+    <el-divider />
     <div>
+        <h3>Your Answer:</h3>
+        
         <TextEditor ref="textEditor"></TextEditor>
 
     </div>
+    <br>
     <div>
         <el-button type="primary" @click="btnAnswerSave">Save</el-button>
     </div>
@@ -33,13 +36,17 @@ export default {
         let tmpUrl = window.location.href.split("/");
         let qid = tmpUrl[tmpUrl.length - 3];
 
-        let targetUrl = "/question/" + qid + "/answer/new";
+        let targetUrl = "/question/" + qid + "/answer/single";
 
-        this.$axios.get(targetUrl).then((res) => {
-            if (res.data.code == 0) {
-                this.question = res.data.data;
-            }
-        });
+        this.$axios
+            .get(targetUrl)
+            .then((res) => {
+                if (res.data.code == 0) {
+                    this.question = res.data.data;
+                } else {
+                    this.question = "Get question content error"
+                }
+            });
         
     },
     methods: {

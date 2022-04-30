@@ -4,6 +4,7 @@
             <QuestionDetailItem :questiondata="question"></QuestionDetailItem>
             <!-- <el-button type="primary" @click="btnWriteAnswer(question.Id)">写回答</el-button> -->
         </div>
+        <el-divider />
     </p>
 </template>
 

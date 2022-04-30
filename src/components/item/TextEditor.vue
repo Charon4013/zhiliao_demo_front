@@ -38,8 +38,8 @@ export default {
             tinymceId: '',
             init: {
                 selector: "#tinymce",
-                language_url: "/tinymce/langs/zh_Hans.js", //汉化路径是自定义的
-                language: "zh-Hans", // 官方文档没更新名字
+                // language_url: "/tinymce/langs/zh_Hans.js", //汉化路径是自定义的
+                // language: "zh-Hans", // 官方文档没更新名字
                 skin_url: "/tinymce/skins/ui/oxide", //皮肤
                 content_css: "/node_modules/@tinymce/tinymce-vue/node_modules/skins/content/default",
                 plugins: this.plugins, //插件

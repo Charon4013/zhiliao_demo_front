@@ -1,6 +1,6 @@
 <template>
     <el-form v-model="answerdata" :disabled="true">
-        <strong style="font-size:medium">User: {{answerdata.uid}} </strong>
+        <span><el-icon><user /></el-icon>{{answerdata.uid}}</span>
         <TextView :content="answerdata.content"></TextView>
     </el-form>
 </template>

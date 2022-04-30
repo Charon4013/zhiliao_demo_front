@@ -1,15 +1,21 @@
 <template>
 
         <p v-for="(qaItem, index) in data" :key="index">
-            <div>
+            <el-card>
+
                 <el-link :underline="false" @click="divToQuestionDetail(qaItem.question.Id)"><strong style="font-size: larger;">{{qaItem.question.title}}</strong></el-link>
-                
-                <AnswerDetailItem :answerdata="qaItem.answer"></AnswerDetailItem>
                 <br>
-                <el-button type="text" disabled><el-icon><caret-top /></el-icon>&nbsp;{{qaItem.support_count}}</el-button>
-                <el-button type="text" disabled><el-icon><chat-square /></el-icon>&nbsp;{{qaItem.comment_count}}</el-button>          
-            </div>   
-            <br> 
+                <span><el-icon><user /></el-icon>{{qaItem.question.uid}}</span>
+                <el-divider />
+
+                {{splitContentTag(qaItem.answer.content)}}
+                <br>
+                <el-divider />
+                <span><el-icon><caret-top /></el-icon>&nbsp;{{qaItem.support_count}}</span>&nbsp;
+                <span><el-icon><chat-square /></el-icon>&nbsp;{{qaItem.comment_count}}</span>
+                <span style="float: right;"><el-icon><clock /></el-icon>&nbsp;{{qaItem.answer.Created}}</span>
+
+            </el-card>   
         </p>
 
 </template>
@@ -39,6 +45,10 @@ import SupportAndCommentDetail from "./SupportAndCommentDetail.vue"
             divToQuestionDetail(qid) {
                 let url = '/question/' + qid
                 this.$router.push(url)
+            },
+            // 简单去标签
+            splitContentTag(str) {
+                return str.replace(/<.*?>/ig, "")
             }
         },
     }
