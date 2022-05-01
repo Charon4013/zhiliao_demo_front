@@ -6,7 +6,9 @@
     <h2>User Answer</h2>
     <p class="scrollbar-demo-item">
         <AnswerDetailItem :answerdata="qaData.answer"></AnswerDetailItem>
+        <br>
         <SupportAndCommentDetail :answerid="qaData.answer.Id"></SupportAndCommentDetail>
+        <span style="float: right;"><el-icon><clock /></el-icon>&nbsp;{{qaData.answer.Created}}</span>
     </p>
 
     <el-divider></el-divider>
@@ -15,9 +17,11 @@
     <el-divider></el-divider>
     <h2>Comment List</h2>
     <p v-if="this.commentList.length != 0" v-for="(commentitemdata, index) in commentList" :key="index" class="scrollbar-demo-item">
-        <div>#{{ index+1 }}:</div>
+        <h4>#{{ index+1 }}:</h4>
         <CommentDetailItem :commentitem="commentitemdata"></CommentDetailItem>
+        <br><br>
         <CommentSupportDetailItem :commentid="commentitemdata.Id"></CommentSupportDetailItem>
+        <span style="float: right;"><el-icon><clock /></el-icon>&nbsp;{{commentitemdata.Created}}</span>
     </p>
     <p v-else>No comment yet</p>
 

@@ -13,7 +13,7 @@
             <el-table-column prop="Updated" label="Updated" />
             <el-table-column fixed="right" label="Operation">
                 <template v-slot="scope">       
-                    <el-button type="danger" @click="btnToDeleteSomeone('user', scope.row.Id)">Delete</el-button>
+                    <el-button type="danger" @click="btnToDeleteSomeone('user', scope.row.Id)"><el-icon><delete /></el-icon></el-button>
                 </template>
             </el-table-column>           
         </el-table>
@@ -28,8 +28,8 @@
             <el-table-column prop="Updated" label="Updated" />
             <el-table-column fixed="right" label="Operation">
                 <template v-slot="scope">
-                    <el-button type="primary" @click="btnToDetail('userinfo', scope.row.Id, 0)">Detail</el-button>
-                    <el-button type="danger" @click="btnToDeleteSomeone('userinfo', scope.row.Id)">Delete</el-button>
+                    <el-button type="primary" @click="btnToDetail('userinfo', scope.row.Id, 0)"><el-icon><view /></el-icon></el-button>
+                    <el-button type="danger" @click="btnToDeleteSomeone('userinfo', scope.row.Id)"><el-icon><delete /></el-icon></el-button>
                 </template>
             </el-table-column>
         </el-table>
@@ -44,8 +44,8 @@
             <el-table-column prop="Updated" label="Updated" />
             <el-table-column fixed="right" label="Operation">
                 <template v-slot="scope">
-                    <el-button type="primary" @click="btnToDetail('question', scope.row.Id)">Detail</el-button>
-                    <el-button type="danger" @click="btnToDeleteSomeone('question', scope.row.Id)">Delete</el-button>
+                    <el-button type="primary" @click="btnToDetail('question', scope.row.Id)"><el-icon><view /></el-icon></el-button>
+                    <el-button type="danger" @click="btnToDeleteSomeone('question', scope.row.Id)"><el-icon><delete /></el-icon></el-button>
                 </template>
             </el-table-column>
         </el-table>
@@ -60,8 +60,8 @@
             <el-table-column prop="Updated" label="Updated" />
             <el-table-column fixed="right" label="Operation">
                 <template v-slot="scope">
-                    <el-button type="primary" @click="btnToDetail('answer', scope.row.Id, scope.row.qid)">Detail</el-button>
-                    <el-button type="danger" @click="btnToDeleteSomeone('answer', scope.row.Id)">Delete</el-button>
+                    <el-button type="primary" @click="btnToDetail('answer', scope.row.Id, scope.row.qid)"><el-icon><view /></el-icon></el-button>
+                    <el-button type="danger" @click="btnToDeleteSomeone('answer', scope.row.Id)"><el-icon><delete /></el-icon></el-button>
                 </template>
             </el-table-column>
         </el-table>
@@ -75,7 +75,7 @@
             <el-table-column prop="Created" label="Created" />
             <el-table-column fixed="right" label="Operation">
                 <template v-slot="scope">
-                    <el-button type="danger" @click="btnToDeleteSomeone('comment', scope.row.Id)">Delete</el-button>  
+                    <el-button type="danger" @click="btnToDeleteSomeone('comment', scope.row.Id)"><el-icon><delete /></el-icon></el-button>  
                 </template>
             </el-table-column>
         </el-table>     
@@ -181,7 +181,8 @@
                 } else {
                     url = "/404"
                 }
-                console.log("url: ", url)
+                // console.log("url: ", url)
+                this.$router.push(url)
             }
         },
         mounted() {

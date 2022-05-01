@@ -4,15 +4,15 @@
         <el-form-item label="User Id">
             <el-input v-model="userInfo.uid" disabled/>
         </el-form-item>
-        <el-form-item label="Avatar">
-            <a>暂无</a>
-        </el-form-item>
-        <el-form-item label="Sex">
-            <el-select v-model="userInfo.sex" placeholder="Sex">
-                <el-option label="男" value="male" />
-                <el-option label="女" value="female" />
-                <el-option label="外星人" value="alien" />
-                <el-option label="还有50+种就不列了" value="hhh" disabled/>
+        <!-- <el-form-item label="Avatar">
+            <a>No</a>
+        </el-form-item> -->
+        <el-form-item label="Gender">
+            <el-select v-model="userInfo.sex" placeholder="56 kinds">
+                <el-option label="male" value="male" />
+                <el-option label="female" value="female" />
+                <el-option label="alien" value="alien" />
+                <el-option label="another 53 kinds" value="hhh" disabled/>
             </el-select>
         </el-form-item>
         <el-form-item label="birthday">
@@ -22,7 +22,7 @@
             <el-input v-model="userInfo.location"/>
         </el-form-item>
         <el-form-item label="Describe youreself">
-            <el-input v-model="userInfo.description"/>
+            <el-input v-model="userInfo.description" placeholder="Use one sentence to describe yourself" />
         </el-form-item>
         
         <el-form-item>

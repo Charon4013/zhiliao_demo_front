@@ -9,7 +9,8 @@
         ref="description"
         :outContent="question.description"
     ></TextEditor>
-    <el-button type="primary" @click="btnToModifyQuestion">Save</el-button>
+    <br>
+    <el-button type="primary" @click="btnToModifyQuestion"><el-icon><document-checked /></el-icon></el-button>
 </template>
 
 <script>
@@ -30,7 +31,7 @@ export default {
         let tmpUrl = window.location.href.split("/");
         let qid = tmpUrl[tmpUrl.length - 2];
         console.log("qid: ", qid);
-        let url = "/question/" + qid + "/single";
+        let url = "/question/" + qid + "/answer/single";
         console.log("url:", url);
         this.$axios.get(url).then((res) => {
             console.log("res.data:", res.data);

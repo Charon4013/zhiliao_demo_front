@@ -4,23 +4,24 @@
     <el-divider />
 
     <el-scrollbar v-if="!questionShow">
-        <label>Your question:</label>
+        <h4>Your question:</h4>
         <p v-if="this.questionList.length != 0" v-for="(question, index) in questionList" :key="index" class="scrollbar-demo-item">
             <QuestionDetailItem :questiondata="question"></QuestionDetailItem>
-            <el-button type="primary" v-if="isUserOwn" @click="btnToModifyQuestion(question.Id)">修改问题</el-button>
-            <el-button type="primary" v-if="isUserOwn" @click="btnToDeleteQuestion(question.Id)">删除问题</el-button>
+            <br>
+            <el-button type="primary" v-if="isUserOwn" @click="btnToModifyQuestion(question.Id)"><el-icon><edit /></el-icon></el-button>
+            <el-button type="primary" v-if="isUserOwn" @click="btnToDeleteQuestion(question.Id)"><el-icon><delete /></el-icon></el-button>
             <el-divider />
         </p>
         <p v-else>You have not question yet</p>
     </el-scrollbar>
-
 
     <el-scrollbar v-if="!questionAnswerShow">
         <label>Your answer:</label>
         <p v-for="(qaData, index) in questionAnswerList" :key="index" class="scrollbar-demo-item">
             <strong style="font-size: larger;" @click="btnToAnswerDetail(qaData.answer)">{{qaData.question.title}}</strong>
             <AnswerDetailItem :answerdata="qaData.answer"></AnswerDetailItem>
-            <el-button type="primary" v-if="isUserOwn" @click="btnToModifyAnswer(qaData.answer.qid, qaData.answer.Id)">修改回答</el-button>
+            <br>
+            <el-button type="primary" v-if="isUserOwn" @click="btnToModifyAnswer(qaData.answer.qid, qaData.answer.Id)"><el-icon><edit /></el-icon></el-button>
             <el-button type="primary" v-if="isUserOwn" @click="btnToDeleteAnswer(qaData.answer.Id)">删除回答</el-button>
             <el-divider />
         </p>

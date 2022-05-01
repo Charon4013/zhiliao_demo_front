@@ -9,7 +9,7 @@
     </div>
     <br>
     <div>
-        <el-button type="primary" @click="btnAnswerSave">Save</el-button>
+        <el-button type="primary" @click="btnAnswerSave"><el-icon><document-checked /></el-icon></el-button>
     </div>
 </template>
 
